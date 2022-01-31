@@ -1,0 +1,59 @@
+.section {
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+
+  @apply flex
+  flex-col
+  rounded-xl
+  lg:flex-row 
+  lg:items-center
+  relative;
+}
+
+.section .icons {
+  @apply hidden
+  lg:flex
+  flex-col
+  max-h-40
+  h-40
+  justify-between
+  text-2xl
+  absolute
+  -left-12
+  text-gray-300;
+}
+
+.section .icons a {
+  @apply hover:text-gray-400;
+}
+
+.section div.image {
+  @apply w-full
+  lg:w-auto;
+}
+
+.section div.image img {
+  @apply rounded-t-xl
+  w-full
+  lg:rounded-tr-none 
+  lg:rounded-l-xl;
+}
+
+.section .textContent {
+  @apply flex-1  mx-4 xl:mx-16;
+}
+
+.section .textContent h1 {
+  @apply text-3xl 
+    mt-8 
+    font-bold 
+    mb-8 
+    leading-tight
+    lg:text-5xl;
+}
+
+.copyright {
+  @apply float-right
+  hidden 
+  lg:block
+  lg:py-8;
+}

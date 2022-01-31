@@ -1,0 +1,31 @@
+.header {
+  height: 6.5rem;
+  @apply flex;
+}
+
+.header nav {
+  @apply w-full 
+  flex 
+  justify-between 
+  items-center;
+}
+
+.header nav ul {
+  @apply hidden
+  lg:flex
+  font-bold;
+}
+
+.header nav ul li:not(:last-of-type) {
+  @apply mr-6;
+}
+
+.header nav ul li {
+  @apply text-sm;
+}
+
+.burgerMenu {
+  @apply text-2xl
+  cursor-pointer
+  lg:hidden;
+}
