@@ -62,6 +62,21 @@ export default function Home() {
         </section>
 
         <p className={styles.copyright}>copyright ©ferhancihaner.com</p>
+
+        <div className={styles.mobileIcons}>
+          <a href="https://www.facebook.com/">
+            <BsFacebook />
+          </a>
+          <a href="https://www.twitter.com/">
+            <BsTwitter />
+          </a>
+          <a href="https://www.instagram.com/">
+            <BsInstagram />
+          </a>
+          <a href="https://www.youtube.com/">
+            <BsYoutube />
+          </a>
+        </div>
       </Layout>
     </>
   );

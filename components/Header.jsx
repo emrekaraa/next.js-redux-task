@@ -106,7 +106,6 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-
         <div className={styles.icons}>
           <a href="https://www.facebook.com/">
             <BsFacebook />

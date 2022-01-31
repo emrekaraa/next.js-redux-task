@@ -3,9 +3,9 @@
 
   @apply flex
   flex-col
-  mb-14
+
   rounded-xl
-  lg:mb-0
+
   lg:flex-row 
   lg:items-center
   relative;
@@ -58,4 +58,19 @@
   hidden 
   lg:block
   lg:py-8;
+}
+
+.mobileIcons {
+  @apply lg:hidden
+  flex
+  justify-center
+  w-full
+  text-2xl
+  text-gray-500
+  self-center
+  my-8;
+}
+
+.mobileIcons a {
+  @apply px-3;
 }

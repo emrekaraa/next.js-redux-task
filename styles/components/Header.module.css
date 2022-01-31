@@ -74,10 +74,10 @@ nav.mobile ul li {
 
 nav.mobile .icons {
   @apply flex
-  w-40
+  w-48
   justify-between
   text-2xl
   text-gray-500
   self-center
-  mt-10;
+  mt-8;
 }
