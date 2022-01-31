@@ -3,7 +3,9 @@
 
   @apply flex
   flex-col
+  mb-14
   rounded-xl
+  lg:mb-0
   lg:flex-row 
   lg:items-center
   relative;

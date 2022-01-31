@@ -3,29 +3,81 @@
   @apply flex;
 }
 
-.header nav {
+.header .nav {
   @apply w-full 
   flex 
   justify-between 
   items-center;
 }
 
-.header nav ul {
+.header .nav ul.desktopMenu {
   @apply hidden
   lg:flex
   font-bold;
 }
 
-.header nav ul li:not(:last-of-type) {
+.header .nav ul.desktopMenu li:not(:last-of-type) {
   @apply mr-6;
 }
 
-.header nav ul li {
+.header .nav ul.desktopMenu li {
   @apply text-sm;
 }
 
-.burgerMenu {
+/* Mobile Menu Start */
+
+.header .burgerMenu {
   @apply text-2xl
   cursor-pointer
   lg:hidden;
+}
+
+nav.mobile {
+  @apply fixed 
+  text-sm
+  bg-black
+  text-white
+  left-0
+  top-0
+  w-full
+  h-full
+  z-50
+  flex
+  lg:hidden
+  items-end
+  font-bold
+  flex-col;
+  transition: 800ms all;
+}
+
+.closed {
+  transform: translate(1025px);
+}
+
+nav.mobile .closeBtn {
+  @apply text-4xl
+  cursor-pointer
+  mt-7
+  mr-7;
+}
+
+nav.mobile ul {
+  @apply flex 
+  flex-col
+  pt-5
+  w-10/12;
+}
+
+nav.mobile ul li {
+  @apply py-5;
+}
+
+nav.mobile .icons {
+  @apply flex
+  w-40
+  justify-between
+  text-2xl
+  text-gray-500
+  self-center
+  mt-10;
 }
