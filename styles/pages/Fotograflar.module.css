@@ -1,0 +1,19 @@
+.pagination {
+  @apply flex 
+
+  justify-center;
+}
+.page {
+  @apply mx-2;
+}
+.pageLink {
+  @apply text-xl 
+  py-2 
+  px-3.5 
+  rounded-full 
+  bg-gray-400;
+}
+
+.active {
+  @apply bg-gray-200;
+}

@@ -1,6 +1,8 @@
 import Head from "next/head";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
-const Layout = ({ children }) => {
+const fotograf = ({ data }) => {
   return (
     <>
       <Head>
@@ -17,12 +19,25 @@ const Layout = ({ children }) => {
           rel="stylesheet"
         />
       </Head>
-
-      <>
-        <main className="container">{children}</main>
-      </>
+      <Header />
+      <div className="flex flex-col justify-center items-center my-24">
+        <p>Resim {data.id}</p>
+        <img src={data.url} />
+      </div>
+      <Footer />
     </>
   );
 };
 
-export default Layout;
+export async function getServerSideProps(context) {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/photos/${context.params.id}`
+  );
+  const data = await res.json();
+
+  return {
+    props: { data }, // will be passed to the page component as props
+  };
+}
+
+export default fotograf;

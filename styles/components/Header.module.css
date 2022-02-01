@@ -1,6 +1,5 @@
 .header {
-  height: 6.5rem;
-  @apply flex;
+  @apply flex h-24;
 }
 
 .header .nav {
@@ -12,8 +11,7 @@
 
 .header .nav ul.desktopMenu {
   @apply hidden
-  lg:flex
-  font-bold;
+  lg:flex;
 }
 
 .header .nav ul.desktopMenu li:not(:last-of-type) {
@@ -21,7 +19,7 @@
 }
 
 .header .nav ul.desktopMenu li {
-  @apply text-sm;
+  @apply font-bold text-sm;
 }
 
 /* Mobile Menu Start */
@@ -57,19 +55,23 @@ nav.mobile {
 nav.mobile .closeBtn {
   @apply text-4xl
   cursor-pointer
-  mt-7
-  mr-7;
+  mt-8
+  mr-8;
 }
 
 nav.mobile ul {
   @apply flex 
   flex-col
-  pt-5
+  pt-16
   w-10/12;
 }
 
 nav.mobile ul li {
   @apply py-5;
+}
+
+nav.mobile ul li:first-of-type {
+  @apply border-t;
 }
 
 nav.mobile .icons {

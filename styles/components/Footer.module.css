@@ -1,0 +1,51 @@
+.footer {
+  @apply bg-black 
+  text-white 
+  h-52;
+}
+
+.footer .footerNav {
+  @apply w-full 
+    h-24
+    flex 
+    justify-center 
+    items-center
+
+    lg:justify-between;
+}
+
+.footer .footerNav ul {
+  @apply hidden
+    lg:flex;
+}
+
+.footer .footerNav ul li:not(:last-of-type) {
+  @apply mr-6;
+}
+
+.footer .footerNav ul li {
+  @apply font-bold text-sm;
+}
+
+.footer .footerInfo {
+  @apply flex
+  justify-center
+  mt-4
+  lg:justify-between;
+}
+
+.footerInfo .socialIcons {
+  @apply flex
+    text-2xl
+    text-gray-500;
+}
+
+.footerInfo .socialIcons a:not(:first-of-type) {
+  @apply ml-5;
+}
+
+.footerInfo p {
+  @apply hidden 
+  text-sm
+  lg:block;
+}

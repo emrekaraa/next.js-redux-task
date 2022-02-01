@@ -2,17 +2,35 @@
 import styles from "../styles/pages/Index.module.css";
 // Components
 import Header from "../components/Header";
-import Layout from "../components/Layout";
+import Layout from "../components/Helpers/Layout";
 // Icons
 import { BsFacebook, BsTwitter, BsInstagram, BsYoutube } from "react-icons/bs";
+
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
-      <Layout>
-        <Header />
+      <Head>
+        <title>Ferhan Cihaner</title>
+        <meta
+          name="description"
+          content="Ferhan Cihaner, Sağlıklı yaşam koçu!"
+        />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
 
+      <Header />
+
+      <Layout>
         <section className={styles.section}>
+          {/* Desktop Icons */}
           <div className={styles.icons}>
             <a href="https://www.facebook.com/">
               <BsFacebook />
@@ -27,11 +45,10 @@ export default function Home() {
               <BsYoutube />
             </a>
           </div>
+          {/* Image */}
+          <img src="/Ferhan.png" alt="Ferhan-Cihaner" />
 
-          <div className={styles.image}>
-            <img src="/Ferhan.png" alt="Ferhan-Cihaner" />
-          </div>
-
+          {/* Text Content */}
           <div className={styles.textContent}>
             <h1>
               Merhaba,
@@ -61,8 +78,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Copyright */}
         <p className={styles.copyright}>copyright ©ferhancihaner.com</p>
-
+        {/* Mobile Icons */}
         <div className={styles.mobileIcons}>
           <a href="https://www.facebook.com/">
             <BsFacebook />

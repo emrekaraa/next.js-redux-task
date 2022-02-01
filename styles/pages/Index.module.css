@@ -3,9 +3,7 @@
 
   @apply flex
   flex-col
-
   rounded-xl
-
   lg:flex-row 
   lg:items-center
   relative;
@@ -28,14 +26,10 @@
   @apply hover:text-gray-400;
 }
 
-.section div.image {
-  @apply w-full
-  lg:w-auto;
-}
-
-.section div.image img {
+.section img {
   @apply rounded-t-xl
   w-full
+  lg:w-auto
   lg:rounded-tr-none 
   lg:rounded-l-xl;
 }

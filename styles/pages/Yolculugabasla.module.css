@@ -1,0 +1,44 @@
+.container {
+  min-height: 40vh;
+
+  @apply my-10 mb-40 flex justify-center;
+}
+
+.container form {
+  @apply w-10/12 lg:w-7/12;
+}
+
+.container h2 {
+  @apply text-4xl font-bold;
+}
+
+.container h3 {
+  @apply text-2xl
+  font-semibold
+  mt-14
+  mb-8;
+}
+
+.container input,
+.container select,
+.container textarea {
+  @apply p-3.5 flex-1 outline-none border border-black font-bold;
+}
+
+.container select {
+  @apply w-full;
+}
+.container button {
+  @apply block bg-black w-full text-white p-3  font-semibold mt-5;
+}
+
+.container input[type="radio"] {
+  @apply mr-1;
+}
+.container label {
+  @apply font-semibold;
+}
+
+.container .btn {
+  @apply block bg-black text-white p-3  font-semibold mt-5 text-center;
+}
