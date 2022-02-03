@@ -9,6 +9,7 @@ import Head from "../components/Helpers/Head";
 import { BsFacebook, BsTwitter, BsInstagram, BsYoutube } from "react-icons/bs";
 
 
+
 export default function Home() {
   return (
     <>
@@ -36,6 +37,7 @@ export default function Home() {
 
           {/* Image */}
           <img src="/Ferhan.png" alt="Ferhan-Cihaner" />
+
 
 
           {/* Text Content */}
