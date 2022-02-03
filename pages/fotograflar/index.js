@@ -40,7 +40,6 @@ const Photos = () => {
         <div className="flex flex-wrap justify-center mt-14">
           {data.map((item) => (
             <div key={item.id} className="m-3 lg:w-3/12 lg:mx-4 lg:my-4">
-              <div className="text-center">Resim: {item.id}</div>
               <Link href={`/fotograflar/${item.id}`}>
                 <a>
                   <img src={item.url} alt={item.title} />
