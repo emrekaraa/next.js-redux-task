@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../styles/components/Header.module.css";
 // Icons
 import { FiMenu } from "react-icons/fi";
-import { AiOutlineCloseSquare } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import { BsFacebook, BsTwitter, BsInstagram, BsYoutube } from "react-icons/bs";
 // Helpers
 import { menus } from "./Helpers/Menus";
@@ -21,31 +21,23 @@ const Header = () => {
   return (
     <Layout>
       <header className={styles.header}>
-        {/* Desktop Nav */}
 
+        {/* NavBar */}
         <nav className={styles.nav}>
-          {/* Logo */}
           <div>
             <Link href="/">
-              <a>
-                <img src="/Logo.png" alt="logo" />
-              </a>
+              <a><img src="/Logo.png" alt="logo" /></a>
             </Link>
           </div>
-
-          {/* Menu */}
           <ul className={styles.desktopMenu}>
-            {menus.map((menu) => {
-              return (
+            {menus.map((menu) => (
                 <li key={menu.name}>
                   <Link href={menu.path}>
                     <a>{menu.name}</a>
-                  </Link>
+                    </Link>
                 </li>
-              );
-            })}
+              ))}
           </ul>
-
           {/* Hamburger Menu Icon */}
           <button onClick={activeMenu} className={styles.burgerMenu}>
             <FiMenu />
@@ -55,19 +47,19 @@ const Header = () => {
         {/* Mobile Menu */}
         <nav id="mobileMenu" className={`${styles.mobile} ${styles.closed}`}>
           <button onClick={closeMenu} className={styles.closeBtn}>
-            <AiOutlineCloseSquare />
+            <AiOutlineClose />
           </button>
+
           <ul>
-            {menus.map((menu) => {
-              return (
+            {menus.map((menu) => (
                 <li key={menu.name} className="border-b">
                   <Link href={menu.path}>
                     <a>{menu.name}</a>
                   </Link>
                 </li>
-              );
-            })}
+              ))}
           </ul>
+
           <div className={styles.icons}>
             <a href="https://www.facebook.com/">
               <BsFacebook />

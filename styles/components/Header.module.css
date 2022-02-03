@@ -53,7 +53,7 @@ nav.mobile {
 }
 
 nav.mobile .closeBtn {
-  @apply text-4xl
+  @apply text-2xl
   cursor-pointer
   mt-8
   mr-8;

@@ -11,9 +11,10 @@
   py-2 
   px-3.5 
   rounded-full 
-  bg-gray-400;
+  bg-gray-500
+  text-white
 }
 
 .active {
-  @apply bg-gray-200;
+  @apply bg-gray-300 text-black;
 }
