@@ -36,31 +36,34 @@ const Photos = () => {
       <PageTitle title="Fotoğraflar" />
 
       <Layout>
-        <div className="flex flex-wrap justify-center mt-14" id="fotograflar">
+
+        <div className="flex flex-wrap justify-center mt-14">
           {data.map((item) => (
-            <div key={item.id} className="m-3 lg:w-3/12 lg:mx-4 lg:my-4 ">
+            <div key={item.id} className="m-3 lg:w-3/12 lg:mx-4 lg:my-4">
+              <div className="text-center">Resim: {item.id}</div>
               <Link href={`/fotograflar/${item.id}`}>
-                <a>Resim {item.id}
+                <a>
                   <img src={item.url} alt={item.title} />
                 </a>
               </Link>
             </div>
           ))}
+
+          {/* Pagination */}
+          <div className="mb-14 mt-5 w-full">
+            <ReactPaginate
+              className={styles.pagination}
+              previousLabel={""}
+              nextLabel={""}
+              pageCount={4}
+              onPageChange={(e) => { setPage(e.selected + 1); animateScroll.scrollToTop(); }}
+              pageClassName={styles.page}
+              pageLinkClassName={styles.pageLink}
+              activeLinkClassName={styles.active}
+            />
+          </div>
         </div>
 
-        {/* Pagination */}
-        <div className="mb-14 mt-5">
-          <ReactPaginate
-            className={styles.pagination}
-            previousLabel={""}
-            nextLabel={""}
-            pageCount={4}
-            onPageChange={(e) => { setPage(e.selected + 1); animateScroll.scrollToTop(); }}
-            pageClassName={styles.page}
-            pageLinkClassName={styles.pageLink}
-            activeLinkClassName={styles.active}
-          />
-        </div>
       </Layout>
 
       <Footer />
