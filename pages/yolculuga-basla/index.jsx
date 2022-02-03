@@ -10,10 +10,13 @@ import styles from "../../styles/pages/Yolculugabasla.module.css";
 // Helpers
 import { countryList } from "../../components/Helpers/Countries";
 import Layout from "../../components/Helpers/Layout";
+// Redux
+import { connect } from "react-redux";
+import { setReduxForm } from "../../redux/actions/main";
 
-const YolculugaBasla = () => {
+const YolculugaBasla = ({ formInfo, setReduxForm }) => {
   const [step, setStep] = useState(1);
-  const [forms, setForms] = useState([]);
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -32,7 +35,8 @@ const YolculugaBasla = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setForms((prevValue) => [...prevValue, form]);
+    setForm({ ...form });
+    setReduxForm({ ...form });
   };
 
   const stepValidation = () => {
@@ -48,8 +52,6 @@ const YolculugaBasla = () => {
       alert("Lütfen tüm alanları doldurunuz.");
     }
   };
-
-  console.log(forms);
 
   return (
     <>
@@ -249,4 +251,12 @@ const YolculugaBasla = () => {
   );
 };
 
-export default YolculugaBasla;
+const mapStateToProps = (state) => ({
+  formInfo: state.main,
+});
+
+const mapDispatchToProps = {
+  setReduxForm: setReduxForm,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(YolculugaBasla);

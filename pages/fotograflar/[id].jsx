@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import PageTitle from "../../components/Helpers/PageTitle";
 
 const fotograf = ({ data }) => {
   return (
@@ -20,6 +21,7 @@ const fotograf = ({ data }) => {
         />
       </Head>
       <Header />
+      <PageTitle title="Fotoğraf Detay" />
       <div className="flex flex-col justify-center items-center my-24">
         <p>Resim {data.id}</p>
         <img src={data.url} />
@@ -36,7 +38,7 @@ export async function getServerSideProps(context) {
   const data = await res.json();
 
   return {
-    props: { data }, // will be passed to the page component as props
+    props: { data },
   };
 }
 
