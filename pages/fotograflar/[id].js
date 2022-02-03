@@ -16,7 +16,7 @@ const fotograf = ({ data }) => {
 
       <div className="flex flex-col justify-center items-center my-24">
         <p>Resim {data.id}</p>
-        <img src={data.url} />
+        <img src={data.url} alt={data.url} />
       </div>
 
       <Footer />

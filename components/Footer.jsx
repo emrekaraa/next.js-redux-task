@@ -1,6 +1,6 @@
 import Link from "next/link";
 //Css
-import styles from "../styles/Components/Footer.module.css";
+import styles from "../styles/components/Footer.module.css";
 //Helpers
 import Layout from "./Helpers/Layout";
 import { menus } from "./Helpers/Menus";
