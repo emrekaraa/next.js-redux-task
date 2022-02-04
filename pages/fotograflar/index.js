@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Router, useRouter } from "next/router";
 import { useEffect, useState } from "react";
 // Packages
 import ReactPaginate from "react-paginate";
@@ -13,19 +14,15 @@ import Head from "../../components/Helpers/Head";
 // Css
 import styles from "../../styles/pages/Fotograflar.module.css";
 
-const Photos = () => {
-  const [page, setPage] = useState(1);
-  const [data, setData] = useState([]);
 
-  const fetchImage = async (pageCount) => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/photos?_page=${pageCount}&_limit=12`);
-    const data = await res.json();
-    setData(data);
-  };
+const Photos = ({ images, page }) => {
 
-  useEffect(() => {
-    fetchImage(page);
-  }, [page]);
+  console.log(images);
+  console.log(page);
+
+
+  const router = useRouter();
+
 
   return (
     <>
@@ -38,11 +35,12 @@ const Photos = () => {
       <Layout>
 
         <div className="flex flex-wrap justify-center mt-14">
-          {data.map((item) => (
-            <div key={item.id} className="m-3 lg:w-3/12 lg:mx-4 lg:my-4">
-              <Link href={`/fotograflar/${item.id}`}>
+          {images.map((image) => (
+            <div key={image.id} className="m-3 lg:w-3/12 lg:mx-4 lg:my-4">
+              <p className="text-center">Resim: {image.id}</p>
+              <Link href={`/fotograflar/${image.id}`}>
                 <a>
-                  <img src={item.url} alt={item.title} />
+                  <img src={image.url} alt={image.title} />
                 </a>
               </Link>
             </div>
@@ -52,10 +50,10 @@ const Photos = () => {
           <div className="mb-14 mt-5 w-full">
             <ReactPaginate
               className={styles.pagination}
-              previousLabel={""}
-              nextLabel={""}
+              previousLabel={"PREV"}
+              nextLabel={"NEXT"}
               pageCount={4}
-              onPageChange={(e) => { setPage(e.selected + 1); animateScroll.scrollToTop(); }}
+              onPageChange={(page) => { router.push(`/fotograflar?page=${page.selected + 1}`), animateScroll.scrollToTop() }}
               pageClassName={styles.page}
               pageLinkClassName={styles.pageLink}
               activeLinkClassName={styles.active}
@@ -69,5 +67,17 @@ const Photos = () => {
     </>
   );
 };
+
+Photos.getInitialProps = async (ctx) => {
+  const query = ctx.query;
+
+  const res = await fetch(`https://jsonplaceholder.typicode.com/photos?_page=${query.page}?&_limit=12`);
+  const images = await res.json();
+
+  return {
+    images: images,
+    page: query.page
+  }
+}
 
 export default Photos;

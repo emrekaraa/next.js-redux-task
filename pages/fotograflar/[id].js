@@ -5,7 +5,8 @@ import PageTitle from "../../components/PageTitle";
 // Helpers
 import Head from "../../components/Helpers/Head";
 
-const fotograf = ({ data }) => {
+const fotograf = ({ data, imageId }) => {
+
   return (
     <>
       <Head title="Fotoğraf" desc="Ferhan Cihaner, Sağlıklı yaşam koçu!" />
@@ -15,6 +16,7 @@ const fotograf = ({ data }) => {
       <PageTitle title="Fotoğraf Detay" />
 
       <div className="flex flex-col justify-center items-center my-24">
+        RESİM: {imageId}
         <img src={data.url} alt={data.url} />
       </div>
 
@@ -23,14 +25,15 @@ const fotograf = ({ data }) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/photos/${context.params.id}`
-  );
+fotograf.getInitialProps = async (ctx) => {
+
+  const query = ctx.query;
+  const res = await fetch(`https://jsonplaceholder.typicode.com/photos/${query.id}`);
   const data = await res.json();
 
   return {
-    props: { data },
+    data: data,
+    imageId: query.id
   };
 }
 
