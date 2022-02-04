@@ -3,7 +3,6 @@ import { Router, useRouter } from "next/router";
 import { useEffect, useState } from "react";
 // Packages
 import ReactPaginate from "react-paginate";
-import { animateScroll } from "react-scroll/modules";
 // Components
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -53,7 +52,7 @@ const Photos = ({ images, page }) => {
               previousLabel={"PREV"}
               nextLabel={"NEXT"}
               pageCount={4}
-              onPageChange={(page) => { router.push(`/fotograflar?page=${page.selected + 1}`), animateScroll.scrollToTop() }}
+              onPageChange={(page) => router.push(`/fotograflar?page=${page.selected + 1}`)}
               pageClassName={styles.page}
               pageLinkClassName={styles.pageLink}
               activeLinkClassName={styles.active}
