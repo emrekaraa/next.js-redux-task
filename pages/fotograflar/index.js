@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Router, useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
 // Packages
 import ReactPaginate from "react-paginate";
 // Components
